@@ -37,12 +37,15 @@ void loop() {
         data.trim();
 
         // Parse the received data
+        // 000,000,000,090,1,1,255,255,255
+
         int panAngle = data.substring(0, 3).toInt();
         int tiltAngle = data.substring(4, 7).toInt();
         int rollAngle = data.substring(8, 11).toInt();
         int mouthAngle = data.substring(12, 15).toInt();
-        int leftEye_on = data.substring(16, 19).toInt();
-        int rightEyeColor_on = data.substring(20, 23).toInt();
+        int leftEye_on = data.substring(16, 17).toInt();
+        int rightEyeColor_on = data.substring(18, 19).toInt();
+
 
         leftEye_on = (leftEye_on != 0) ? HIGH : LOW;
         rightEyeColor_on = (rightEyeColor_on != 0) ? HIGH : LOW;
